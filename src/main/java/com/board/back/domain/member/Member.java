@@ -11,6 +11,10 @@ public class Member {
         this.password = password;
     }
 
+    /**
+     * Getter & Setter, principle in java
+     */
+
     public String getNickname() {
         return nickname;
     }
