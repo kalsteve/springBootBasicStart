@@ -1,22 +1,40 @@
 package com.board.back.domain.post;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Post {
-    private Long memberId;
-    private Long boardId;
-    private String title;
-    private String view;
-    private LocalDateTime creatAt;
-    private LocalDateTime modifiedAt;
 
-    public Post(Long memberId, Long boardId, String title, String view, LocalDateTime creatAt, LocalDateTime modifiedAt) {
+    private Long postId;
+    private Long memberId;
+    private String title;
+    private String content;
+    private String author;
+    private Date creationDate;
+    private Date lastModifiedDate;
+    private Long views;
+
+    public Post(Long postId, Long memberId, String title, String content, String author, Date creationDate, Date lastModifiedDate, Long views) {
+        this.postId = postId;
         this.memberId = memberId;
-        this.boardId = boardId;
         this.title = title;
-        this.view = view;
-        this.creatAt = creatAt;
-        this.modifiedAt = modifiedAt;
+        this.content = content;
+        this.author = author;
+        this.creationDate = creationDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.views = views;
+    }
+
+    /**
+     * Getter & Setter, principle in java
+     */
+
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 
     public Long getMemberId() {
@@ -35,35 +53,43 @@ public class Post {
         this.title = title;
     }
 
-    public String getView() {
-        return view;
+    public String getContent() {
+        return content;
     }
 
-    public void setView(String view) {
-        this.view = view;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public LocalDateTime getCreatAt() {
-        return creatAt;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setCreatAt(LocalDateTime creatAt) {
-        this.creatAt = creatAt;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public LocalDateTime getModifiedAt() {
-        return modifiedAt;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    public void setModifiedAt(LocalDateTime modifiedAt) {
-        this.modifiedAt = modifiedAt;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public Long getBoardId() {
-        return boardId;
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public void setBoardId(Long boardId) {
-        this.boardId = boardId;
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public Long getViews() {
+        return views;
+    }
+
+    public void setViews(Long views) {
+        this.views = views;
     }
 }

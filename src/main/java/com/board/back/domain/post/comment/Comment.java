@@ -7,8 +7,9 @@ import java.time.LocalDateTime;
  */
 
 public class Comment {
-    private Long commentId;
     private Long memberId;
+    private Long commentId;
+    private Long postId;
     private String detail;
     private LocalDateTime creatAt;
     private LocalDateTime modifiedAt;
@@ -17,13 +18,15 @@ public class Comment {
      * 생성자 주입
      * @param commentId
      * @param memberId
+     * @param postId
      * @param detail
      * @param creatAt
      * @param modifiedAt
      */
-    public Comment(Long commentId, Long memberId, String detail, LocalDateTime creatAt, LocalDateTime modifiedAt) {
+    public Comment(Long commentId, Long memberId, Long postId, String detail, LocalDateTime creatAt, LocalDateTime modifiedAt) {
         this.commentId = commentId;
         this.memberId = memberId;
+        this.postId = postId;
         this.detail = detail;
         this.creatAt = creatAt;
         this.modifiedAt = modifiedAt;
@@ -71,5 +74,13 @@ public class Comment {
 
     public void setModifiedAt(LocalDateTime modifiedAt) {
         this.modifiedAt = modifiedAt;
+    }
+
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 }

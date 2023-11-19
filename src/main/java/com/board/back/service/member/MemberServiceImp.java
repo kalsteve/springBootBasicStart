@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * 회원과 관련된 서비스를 제공
+ * 회원과 관련된 서비스를 제공하는 구현체
  */
 public class MemberServiceImp implements MemberService{
     private final MemberRepository memberRepository;

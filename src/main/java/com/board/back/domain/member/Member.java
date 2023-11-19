@@ -1,11 +1,13 @@
 package com.board.back.domain.member;
 
 public class Member {
+    private  Long memberId;
     private String nickname;
     private String email;
     private String password;
 
-    public Member(String nickname, String email, String password) {
+    public Member(Long memberId, String nickname, String email, String password) {
+        this.memberId = memberId;
         this.nickname = nickname;
         this.email = email;
         this.password = password;
@@ -37,5 +39,13 @@ public class Member {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Long getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
 }

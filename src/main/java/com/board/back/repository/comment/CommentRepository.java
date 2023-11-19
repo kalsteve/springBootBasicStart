@@ -23,6 +23,7 @@ public interface CommentRepository {
      * @param comment
      */
     void delete(Comment comment);
+
     /**
      * 댓글 번호
      * @return Long
@@ -34,21 +35,40 @@ public interface CommentRepository {
      * @param id
      * @return Optional<Comment>
      */
-    Optional<Comment> findById(Long id);
+    Optional<Comment> findByCommentId(Long id);
 
     /**
-     * 댓글 이름으로 댓글 찾기
-     * @param name
+     * 게시판 번호로 댓글 찾기
+     * @param id
      * @return Optional<Comment>
      */
-    Optional<Comment> findByName(String name);
+    List<Comment> findByPostId(Long id);
 
     /**
-     * 댓글 이메일로 댓글 찾기
-     * @param email
+     * 회원 번호로 댓글 찾기
+     * @param id
      * @return Optional<Comment>
      */
-    Optional<Comment> findByEmail(String email);
+    List<Comment> findByMemberId(Long id);
+
+
+    /**
+     * 댓글 번호로 댓글 삭제
+     * @param id
+     */
+    void deleteByCommentId(Long id);
+
+    /**
+     * 게시판 번호로 댓글 삭제
+     * @param id
+     */
+    void deleteByPostId(Long id);
+
+    /**
+     * 회원 번호로 댓글 삭제
+     * @param id
+     */
+    void deleteByMemberId(Long id);
 
     /**
      * 댓글 전체 찾기
@@ -57,8 +77,13 @@ public interface CommentRepository {
     List<Comment> findAll();
 
     /**
-     * 댓글 번호로 댓글 삭제
-     * @param id
+     * 댓글 전체 삭제
      */
-    void deleteById(Long id);
+    void clear();
+
+    /**
+     * 댓글 수정
+     * @param comment
+     */
+    void update(Comment comment);
 }

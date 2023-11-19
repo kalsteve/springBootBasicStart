@@ -5,6 +5,9 @@ import com.board.back.domain.member.Member;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * 회원과 관련된 서비스를 제공하는 인터페이스
+ */
 public interface MemberService {
 
     /**
