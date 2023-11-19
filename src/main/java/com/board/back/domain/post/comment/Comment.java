@@ -1,4 +1,4 @@
-package com.board.back.domain.Post.comment;
+package com.board.back.domain.post.comment;
 
 import java.time.LocalDateTime;
 

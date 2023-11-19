@@ -1,6 +1,6 @@
 package com.board.back.service.Post;
 
-import com.board.back.domain.Post.Post;
+import com.board.back.domain.post.Post;
 
 /**
  * 게시글 서비스 역할

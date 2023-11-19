@@ -1,4 +1,4 @@
-package com.board.back.domain.Post;
+package com.board.back.domain.post;
 
 import java.time.LocalDateTime;
 

@@ -1,7 +1,7 @@
-package com.board.back.repository.Post;
+package com.board.back.repository.post;
 
-import com.board.back.domain.Post.Post;
-import com.board.back.domain.Post.comment.Comment;
+import com.board.back.domain.post.Post;
+import com.board.back.domain.post.comment.Comment;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,6 +1,6 @@
 package com.board.back.repository.comment;
 
-import com.board.back.domain.Post.comment.Comment;
+import com.board.back.domain.post.comment.Comment;
 
 import java.util.List;
 import java.util.Optional;

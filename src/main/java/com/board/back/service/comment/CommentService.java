@@ -1,7 +1,6 @@
 package com.board.back.service.comment;
 
-import com.board.back.domain.Post.comment.Comment;
-import com.board.back.domain.member.Member;
+import com.board.back.domain.post.comment.Comment;
 
 /**
  * 댓글 서비스 인터페이스
