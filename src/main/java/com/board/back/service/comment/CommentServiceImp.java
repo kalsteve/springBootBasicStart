@@ -5,40 +5,43 @@ import com.board.back.repository.comment.CommentRepository;
 import com.board.back.repository.member.MemberRepository;
 import com.board.back.repository.post.PostRepository;
 
-public class CommentServiceImp implements CommentService {
+import java.util.List;
+import java.util.Optional;
 
-    private final MemberRepository memberRepository;
-    private final PostRepository postRepository;
+public class CommentServiceImp implements CommentService {
     private final CommentRepository commentRepository;
 
-    public CommentServiceImp(MemberRepository memberRepository, PostRepository postRepository, CommentRepository commentRepository) {
-        this.memberRepository = memberRepository;
-        this.postRepository = postRepository;
+    public CommentServiceImp(CommentRepository commentRepository) {
         this.commentRepository = commentRepository;
     }
 
     @Override
-    public void writeComment(Comment comment) {
-
+    public void create(Comment comment) {
+        commentRepository.save(comment);
     }
 
     @Override
-    public void updateComment(Comment comment) {
-
+    public void update(Comment comment) {
+        commentRepository.update(comment);
     }
 
     @Override
-    public void deleteComment(Comment comment) {
-
+    public void delete(Comment comment) {
+        commentRepository.delete(comment);
     }
 
     @Override
-    public void readComment(Comment comment) {
-
+    public List<Comment> findByMemberId(Long memberId) {
+        return commentRepository.findByMemberId(memberId);
     }
 
     @Override
-    public void readCommentList(Comment comment) {
+    public List<Comment> findByPostId(Long postId) {
+        return commentRepository.findByPostId(postId);
+    }
 
+    @Override
+    public Optional<Comment> findByCommentId(Long commentId) {
+        return commentRepository.findByCommentId(commentId);
     }
 }

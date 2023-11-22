@@ -19,30 +19,40 @@ public class MemberServiceImp implements MemberService{
 
     @Override
     public void join(Member member) {
+        validateDuplicateMember(member);
         memberRepository.save(member);
     }
 
     @Override
     public List<Member> findMembers(Long memberId) {
-        return null;
+        return memberRepository.findAll();
     }
 
     @Override
     public Optional<Member> findOne(Long memberId) {
-        return Optional.empty();
+        return memberRepository.findById(memberId);
     }
 
     @Override
     public void updateMember(Member member) {
-
+        memberRepository.update(member);
     }
 
     @Override
     public void deleteMember(Member member) {
-
+        memberRepository.delete(member);
     }
 
-
+    /**
+     * 회원 중복 방지
+     * @param member
+     */
+    private void validateDuplicateMember(Member member) {
+        memberRepository.findByName(member.getNickname())
+                .ifPresent(m -> {
+                    throw new IllegalStateException("이미 존재하는 회원입니다.");
+                });
+    }
 
 
 }

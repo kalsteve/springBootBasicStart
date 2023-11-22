@@ -1,11 +1,21 @@
 package com.board.back.domain.member;
 
+/**
+ * 회원
+ */
 public class Member {
     private  Long memberId;
     private String nickname;
     private String email;
     private String password;
 
+    /**
+     * 생성자 주입
+     * @param memberId
+     * @param nickname
+     * @param email
+     * @param password
+     */
     public Member(Long memberId, String nickname, String email, String password) {
         this.memberId = memberId;
         this.nickname = nickname;

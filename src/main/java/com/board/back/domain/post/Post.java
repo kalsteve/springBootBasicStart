@@ -14,6 +14,17 @@ public class Post {
     private Date lastModifiedDate;
     private Long views;
 
+    /**
+     * 생성자 주입
+     * @param postId
+     * @param memberId
+     * @param title
+     * @param content
+     * @param author
+     * @param creationDate
+     * @param lastModifiedDate
+     * @param views
+     */
     public Post(Long postId, Long memberId, String title, String content, String author, Date creationDate, Date lastModifiedDate, Long views) {
         this.postId = postId;
         this.memberId = memberId;

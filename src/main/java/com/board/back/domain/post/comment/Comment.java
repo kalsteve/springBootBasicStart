@@ -3,7 +3,7 @@ package com.board.back.domain.post.comment;
 import java.time.LocalDateTime;
 
 /**
- * 댓글 객체
+ * 댓글
  */
 
 public class Comment {
